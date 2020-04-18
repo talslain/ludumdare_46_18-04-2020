@@ -6,6 +6,9 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] GameObject cursorObject;
+    [SerializeField] Sprite inactive, active;
+
+    SpriteRenderer cursorRenderer;
 
     public Vector3 defaultPosition
     {
@@ -16,11 +19,16 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        cursorRenderer = cursorObject.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         cursorObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition)+Vector3.forward;
+        if (Input.GetMouseButton(0))
+            cursorRenderer.sprite = active;
+        else
+            cursorRenderer.sprite = inactive;
         transform.position = defaultPosition;
     }
 

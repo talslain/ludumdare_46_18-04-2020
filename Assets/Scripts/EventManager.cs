@@ -6,7 +6,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     public static EventManager main;
-    public static Color INTERACT_LIGHT = new Color(1, 1, 1);
+    public static Color INTERACT_LIGHT = new Color(0, 1, 0);
 
     public float energy
     {

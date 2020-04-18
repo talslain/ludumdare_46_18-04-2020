@@ -17,8 +17,9 @@ public class SunlightReceiver : MonoBehaviour
 
     public float GetLightIntensity()
     {
-        Vector2 direction = lightToReceive.transform.position - transform.position;
-        if (Physics2D.Raycast(transform.position, direction, Mathf.Infinity, layerMask) &&
+        Vector2 direction = lightToReceive.transform.position - lightReceivePoint.position;
+        //Debug.DrawRay(lightReceivePoint.position, direction, Color.green);
+        if (!Physics2D.Raycast(lightReceivePoint.position, direction, Mathf.Infinity, layerMask) &&
             lightToReceive.AmIInView(lightReceivePoint.position))
         {
             return lightToReceive.GetLightIntensity();

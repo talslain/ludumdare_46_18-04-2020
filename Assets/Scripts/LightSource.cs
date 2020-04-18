@@ -6,11 +6,12 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class LightSource : MonoBehaviour
 {
     SunlightController sunlight;
-    Light2D light;
+    [SerializeField] Light2D light;
 
     void Start()
     {
-        light = GetComponent<Light2D>();
+        if(light==null)
+            light = GetComponent<Light2D>();
     }
 
     public void SetLightIntensity(float value)
@@ -27,7 +28,7 @@ public class LightSource : MonoBehaviour
     {
         Vector2 dir = ((Vector2) transform.position) - position;
         float angle = Mathf.Atan2(dir.y, dir.x)*Mathf.Rad2Deg - (transform.eulerAngles.z - 180) - 90;
-        if (angle < this.light.pointLightOuterAngle/2 && angle > -1*(this.light.pointLightOuterAngle / 2))
+        if (angle < this.light.pointLightInnerAngle/2 && angle > -1*(this.light.pointLightOuterAngle / 2))
         {
             return true;
         }
