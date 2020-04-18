@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Light
+  - Intereact
   layers:
   - Default
   - TransparentFX
@@ -13,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Walls
+  - Screen
+  - SunLightSource
+  - MIrror
   - 
   - 
   - 
@@ -38,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2368200817
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: IgnoreLight
+    uniqueID: 1334270357
     locked: 0
