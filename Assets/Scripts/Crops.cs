@@ -10,11 +10,10 @@ public class Crops : MonoBehaviour
     [SerializeField] float waterDecay = 0.3f;
     [SerializeField] float healthDecay = 5f;
 
-    [SerializeField] float health = 100;
-    [SerializeField] float sunlight = 10;
-    [SerializeField] float water = 10;
-    [SerializeField] float growth = 0;
-
+    [SerializeField] public float health = 100;
+    [SerializeField] public float sunlight = 10;
+    [SerializeField] public float water = 10;
+    [SerializeField] public float growth = 0;
 
     SunlightReceiver receiver;
 
@@ -40,11 +39,11 @@ public class Crops : MonoBehaviour
 
         if (health <= 0)
         {
-            //lose
+            EventManager.main.LoseGame();
         }
         if (growth >= 900)
         {
-            //win!
+            EventManager.main.WinGame();
         }
     }
 }

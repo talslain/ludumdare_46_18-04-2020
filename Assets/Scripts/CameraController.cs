@@ -30,6 +30,7 @@ public class CameraController : MonoBehaviour
         else
             cursorRenderer.sprite = inactive;
         transform.position = defaultPosition;
+
     }
 
     internal void SetDefaultPosition(Vector2 p)
